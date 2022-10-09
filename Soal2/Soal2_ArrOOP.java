@@ -291,6 +291,7 @@ public class Soal2_ArrOOP{
        clearScreen();
 
        tampilkanData(arrPegawai, panjang);
+       System.out.println("Total gaji : " + totalGaji(arrPegawai, panjang));
        
     }
 
@@ -308,7 +309,7 @@ public class Soal2_ArrOOP{
 
     static void tampilkanData(Pegawai[] data,int ukuran){
         int no = 1;
-        System.out.println("==== Daftar Gaji Harian PT Informatika ====");
+        System.out.println("\t\t\t\t==== Daftar Gaji Harian PT Informatika ====");
         if(data[0].getNIP()=="s"){
             System.out.println("Data kosong ! ");
         }
@@ -338,6 +339,7 @@ public class Soal2_ArrOOP{
                     no++;
                 }
             }
+            System.out.println("================================================================================================================================");
 
         }
         
@@ -350,6 +352,14 @@ public class Soal2_ArrOOP{
         data[i].inputPegawai();
         clearScreen();
         }
+    }
+
+    static int totalGaji(Pegawai[]data,int ukuran){
+        int total = 0;
+        for(int i=0;i<ukuran;i++){
+            total +=data[i].getGajiHarian();
+        }
+        return total;
     }
 
    
